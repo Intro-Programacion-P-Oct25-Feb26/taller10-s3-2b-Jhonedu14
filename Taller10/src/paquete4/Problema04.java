@@ -16,8 +16,8 @@ public class Problema04 {
         int[][] A = new int[3][2];
         int[][] B = new int[3][2];
 
-        boolean cumpleCondicion1 = true; 
-        boolean cumpleCondicion2 = false; 
+        boolean cumpleCondi1 = true; 
+        boolean cumpleCondi2 = false; 
 
         
         for (int i = 0; i < A.length; i++) {
@@ -32,6 +32,38 @@ public class Problema04 {
                 B[i][j] = entrada.nextInt();
             }
         }
-   
-        
+
+        System.out.println("\nMatriz A:");
+        for (int i = 0; i < A.length; i++) {
+            for (int j = 0; j < A[i].length; j++) {
+                System.out.print(A[i][j] + "\t");
+            }
+            System.out.println();  
+        }
+        System.out.println("\nMatriz B:");
+        for (int i = 0; i < B.length; i++) {
+            for (int j = 0; j < B[i].length; j++) {
+                System.out.print(B[i][j] + "\t");
+            }
+            System.out.println();
+        }
+        for (int i = 0; i < A.length; i++) {
+            for (int j = 0; j < A[i].length; j++) {
+
+                if (A[i][j] < B[i][j]) {
+                    cumpleCondi1 = false;
+                }
+
+                if (A[i][j] > B[i][j]) {
+                    cumpleCondi2 = true;
+                }
+            }
+        }
+        if (cumpleCondi1 && cumpleCondi2) {
+            System.out.println("\nLa matriz A es mayor que la matriz B");
+        } else {
+            System.out.println("\nLa matriz A no es mayor que la matriz B");
+        }
+    }
+
 }
