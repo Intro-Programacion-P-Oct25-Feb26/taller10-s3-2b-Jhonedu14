@@ -10,5 +10,46 @@ package paquete3;
  * @author reroes
  */
 public class Problema03 {
-    
+      public static void main(String[] args) {
+      
+          boolean[][] sensores = {
+            {true, true, true, true, true, true},
+            {true, false, true, false, true, false},
+            {false, false, false, false, false, false},
+            {true, true, false, true, true, false}
+        };
+
+        int zonasSinFallos = 0;
+        String reporte = "";
+
+        System.out.println("Reporte de las zonas con fallos:");
+        for (int i = 0; i < sensores.length; i++) {
+            int contadorFallos = 0;
+
+            for (int j = 0; j < sensores[i].length; j++) {
+                if (sensores[i][j] == false) {
+                    contadorFallos= contadorFallos+1;
+                }
+            }
+
+            if (contadorFallos == 0) {
+                zonasSinFallos=  zonasSinFallos+1;
+            } else {
+                reporte = String.format(
+                        "%sZona %d presenta %d fallos\n",
+                        reporte,
+                        i,
+                        contadorFallos);
+            }
+        }
+
+        reporte = String.format(
+                "%s\nZonas que funcionan sin fallos: %d",
+                reporte,
+                zonasSinFallos
+        );
+
+        System.out.println(reporte);
+    }
 }
+
