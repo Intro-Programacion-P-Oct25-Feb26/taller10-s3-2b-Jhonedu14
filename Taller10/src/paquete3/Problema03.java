@@ -12,11 +12,11 @@ package paquete3;
 public class Problema03 {
       public static void main(String[] args) {
       
-          boolean[][] sensores = {
-            {true, true, true, true, true, true},
-            {true, false, true, false, true, false},
-            {false, false, false, false, false, false},
-            {true, true, false, true, true, false}
+          boolean[][] sensores = {                  // para guiarse
+            {true, true, true, true, true, true},   // zona 0 
+            {true, false, true, false, true, false}, // zona 1 
+            {false, false, false, false, false, false}, // zona2 
+            {true, true, false, true, true, false}  // zona 3
         };
 
         int zonasSinFallos = 0;
