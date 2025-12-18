@@ -11,26 +11,27 @@ package paquete8;
 public class Problema8 {
     public static void main(String[] args) {
 
-    double[][] matrizA = {{1, 2, 3}, {6, 8, 9}};
-        double[][] matrizB = {{10, 1, 2}, {10, 9, 1}};
-        double[][] matrizMenor = new double[2][3];
-          
-        for (int i = 0; i < matrizA.length; i++) {
-            for (int j = 0; j < matrizA[i].length; j++) {
+        int[][] matrizA = {{1, 2, 3}, {6, 8, 9}};
+        int[][] matrizB = {{10, 1, 2}, {10, 9, 1}};
 
-                if (matrizA[i][j] <= matrizB[i][j]) {
-                    matrizMenor[i][j] = matrizA[i][j];
+        int[][] matrizResultado = new int[2][3];
+
+        for (int fila = 0; fila < matrizA.length; fila++) {
+            for (int col = 0; col < matrizA[fila].length; col++) {
+
+                if (matrizA[fila][col] < matrizB[fila][col]) {
+                    matrizResultado[fila][col] = matrizA[fila][col];
                 } else {
-                    matrizMenor[i][j] = matrizB[i][j];
+                    matrizResultado[fila][col] = matrizB[fila][col];
                 }
             }
         }
-        int matrizM= matrizMenor.length;
-        for (int i = 0; i < matrizM; i++) {
-            for (int j = 0; j < matrizMenor[i].length; j++) {
-                System.out.print(matrizMenor[i][j] + "  ");
+        int matrizR= matrizResultado.length;
+        for (int fila = 0; fila < matrizR; fila++) {
+            for (int col = 0; col < matrizResultado[fila].length; col++) {
+                System.out.printf(matrizResultado[fila][col] + "\t");
             }
-            System.out.println();
+            System.out.println("");
         }
     }
 }
